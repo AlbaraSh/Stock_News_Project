@@ -1,20 +1,14 @@
 import requests
 from tkinter import *
-#from twilio.rest import Client
 
 FONT = ('Courier', 35, "bold")
 BG_COLOR = "#A1FEFF"
-
-VIRTUAL_TWILIO_NUMBER = "+13345085191"
-VERIFIED_NUMBER = "+97450580696"
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 STOCK_API_KEY = "LYM7JFSHTGXKW3WW"
 NEWS_API_KEY = "0bee828957a54310abebcf855b333639"
-TWILIO_SID = "AC628d7314039a673ae493a415b66e9841"
-TWILIO_AUTH_TOKEN = "fc659c20bb1d9f748fe192f7361004ff"
 
 stock_name = "TSLA"
 company_name = "Tesla Inc"
@@ -85,15 +79,8 @@ def stock_data():
             f"{stock_name}: {diff_percent}%\nHeadline: {article['title']}. \nBrief: {article['description']}"
             for article in three_articles]
         print(formatted_articles)
-        #client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 
-        # sending each article as a separate message via twilio
         for article in formatted_articles:
-            #message = client.messages.create(
-                #body=article,
-                #from_=VIRTUAL_TWILIO_NUMBER,
-                #to=VERIFIED_NUMBER
-            #)
             print(article)
 
 
